@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi app con Gradio Lite</title>
+
+    <script
+        type="module"
+        crossorigin
+        src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js">
+    </script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css"
+    >
+</head>
+
+<body>
+
+<gradio-lite>
+
+import gradio as gr
+
+def saludar(nombre):
+    return f"Hola {nombre}"
+
+demo = gr.Interface(
+    fn=saludar,
+    inputs=gr.Textbox(label="Tu nombre"),
+    outputs=gr.Textbox(label="Resultado"),
+    title="Mi primera app Gradio Lite"
+)
+
+demo.launch()
+
+</gradio-lite>
+
+</body>
+</html>
